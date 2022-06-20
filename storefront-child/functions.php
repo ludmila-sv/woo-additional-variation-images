@@ -226,11 +226,7 @@ function storefront_child_render_variation_imgs() {
 			$variation_imgs = get_post_meta( $variation['variation_id'], 'variation_images', true );
 			if ( is_array( $variation_imgs ) && ! empty( $variation_imgs ) ) {
 				foreach ( $variation_imgs as $image_id ) {
-					$image_thumb_url = wp_get_attachment_thumb_url( $image_id );
-					$image_full_url  = wp_get_attachment_image_src( $image_id, 'full' );
-					?>
-					<div data-thumb="<?php echo esc_url( $image_thumb_url ); ?>" data-thumb-alt="" class="woocommerce-product-gallery__image"><a href="<?php echo esc_url( $image_full_url ); ?>"><?php echo wp_get_attachment_image( $image_id ); ?></a></div>
-					<?php
+					echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html( $image_id ), $image_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
 				}
 			}
 		}
