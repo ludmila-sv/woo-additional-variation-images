@@ -1,0 +1,43 @@
+/*
+Theme Name: Storefront Child Theme - PF
+Description: This is a custom child theme for Storefront
+Author: Pressfoundry
+Author URI: https://pressfoundry.com/
+Template: storefront
+Version: 1.0
+*/
+.variation-colors {
+	display: flex;
+	margin: 0 0 20px;
+}
+.variation-color__btn {
+	margin-right: 5px;
+}
+.variation-color__btn input {
+	display: none;
+}
+.variation-color__btn span {
+	display: block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+}
+.variation-color__btn i {
+	display: none;
+}
+.variation-color__btn input:checked + label i {
+	display: inline;
+}
+.variation-color__btn input[type=radio] + label {
+	display: block;
+	margin: 0;
+}
+.choose-color {
+	margin: 0 0 10px;
+}
+table.variations {
+	display: none;
+}
